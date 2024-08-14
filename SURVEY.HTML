@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: #89CFF0;
+            padding: 20px;
+        }
+        .header-container a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .header-container a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            margin-top: 100px;
+            padding: 20px;
+        }
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(20, 1fr);
+            gap: 10px;
+        }
+        .pdf-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        .pdf-item a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 14px;
+        }
+        .pdf-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="Mohamedindex.html">Back to Home</a>
+    </div>
+
+    <div class="content">
+        <h1>Document Viewer</h1>
+
+        <!-- PDF Section -->
+        <h2 class="section-title">PDF</h2>
+        <div class="grid-container">
+            <!-- Repeat the following div for each PDF file under the OTHER section -->
+            <div class="pdf-item">
+                <a href="PDF_file_01.pdf" target="PDF_file_01.pdf">Other File 01</a>
+            </div>
+            <div class="pdf-item">
+                <a href="PDF_file_02.pdf" target="_blank">Other File 02</a>
+            </div>
+            <!-- Continue this pattern for all OTHER PDFs -->
+        </div>
+
+        <!-- SOFT Section -->
+        <h2 class="section-title">SOFT</h2>
+        <div class="grid-container">
+            <!-- Repeat the following div for each PDF file under the SOFT section -->
+            <div class="pdf-item">
+                <a href="WEB/soft_file_01.pdf" target="PDF_file_01.pdf">Soft File 01</a>
+            </div>
+            <div class="pdf-item">
+                <a href="WEB/soft_file_02.pdf" target="_blank">Soft File 02</a>
+            </div>
+            <!-- Continue this pattern for all SOFT PDFs -->
+        </div>
+    </div>
+
+</body>
+</html>
