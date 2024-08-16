@@ -6,159 +6,296 @@
     <title>QS Mohamed Ahmed Ibrahim</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-            overflow-x: hidden;
+            color: #333;
+            overflow-x: hidden; /* لمنع التمرير الأفقي */
         }
 
-        .header-container {
+        /* شريط التنقل */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             position: fixed;
+            width: 100%;
             top: 0;
             left: 0;
-            right: 0;
             z-index: 1000;
-            transition: all 0.5s ease;
-            background-color: #89CFF0; 
+            transition: background-color 0.3s ease;
         }
 
-        .header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            min-height: 300px; 
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+            position: relative;
         }
 
-        .header img {
+        .navbar .dropdown {
+            position: relative;
+        }
+
+        .navbar .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #006699;
+            min-width: 160px;
+            z-index: 1000;
+        }
+
+        .navbar .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar .dropdown-content a:hover {
+            background-color: #004080;
+        }
+
+        .navbar .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* رأس الصفحة */
+        .header-container {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #004080;
+            color: #fff;
+            position: relative;
+            transition: padding 0.3s ease;
+        }
+
+        .header-container img {
             border-radius: 50%;
-            width: 200px;
-            height: 200px;
-            transition: all 0.5s ease;
+            width: 120px;
+            height: 120px;
+            transition: transform 0.3s ease;
         }
 
-        .header h1 {
-            margin: 0;
-            font-size: 72px;
-            text-align: center;
-            transition: all 0.5s ease;
+        .header-container h1 {
+            margin: 20px 0 10px;
+            font-size: 36px;
+            transition: transform 0.3s ease;
         }
 
+        /* الروابط */
         .links {
-            margin-top: 108px;
+            background-color: #006699;
+            padding: 15px;
             text-align: center;
-            transition: all 0.5s ease;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
         }
 
         .links a {
-            margin: 0 10px;
-            color: #007BFF;
+            color: #fff;
             text-decoration: none;
             font-size: 18px;
+            margin: 0 15px;
+            padding: 10px 20px;
+            border: 2px solid #004080;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
         .links a:hover {
-            text-decoration: underline;
+            background-color: #004080;
         }
 
+        /* المحتوى */
         .content {
-            margin-top: 400px;
             padding: 20px;
+            max-width: 1200px;
+            margin: 150px auto 100px auto;
             background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .content .section {
-            width: 100%;
-            background-color: #fff;
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 2px solid #004080; /* إضافة إطار */
+            border-radius: 15px; /* جعل الزوايا منحنية */
+            background-color: #e6f2ff; /* لون خلفية فاتح داخل الإطار */
+        }
+
+        .section h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #004080;
+        }
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background: url('background-image.jpg') no-repeat center center;
+            background-size: cover;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .content .section h2 {
-            font-size: 22px;
-            margin-bottom: 10px;
+        .project-item {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            width: calc(33% - 40px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
         }
 
-        /* عند التمرير */
-        body.scrolled .header {
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 20px;
-            min-height: 100px;
+        .project-item img {
+            max-width: 100%;
+            border-radius: 5px;
         }
 
-        body.scrolled .header img {
-            width: 100px; 
-            height: 100px;
-            margin-right: 20px;
-            position: fixed;
-            right: 0;
-            top: 10px;
+        .project-item:hover {
+            transform: translateY(-5px);
         }
 
-        body.scrolled .header h1 {
-            font-size: 36px;
-            margin: 0;
-            text-align: left;
-            position: fixed;
-            left: 20px;
-            top: 10px;
+        @media (max-width: 768px) {
+            .project-item {
+                width: calc(50% - 40px);
+            }
         }
 
-        body.scrolled .links {
-            position: fixed;
-            bottom: 10px;
-            left: 20px;
-            right: 20px;
-            font-size: 18px;
+        @media (max-width: 480px) {
+            .project-item {
+                width: 100%;
+            }
         }
+
+        /* تغيير موضع الاسم والصورة عند التمرير */
+        .scrolled .header-container h1 {
+            transform: translateX(-150px);
+        }
+
+        .scrolled .header-container img {
+            transform: translateX(150px);
+        }
+
+        /* تغيير خلفية شريط الروابط عند التمرير */
+        .scrolled .links {
+            background: linear-gradient(to right, #004080, #006699);
+        }
+
     </style>
 </head>
 <body>
 
-    <div class="header-container">
-        <div class="header">
-            <img src="Mohamed-Ahmed.png" alt="Profile Picture">
-            <h1>QS Mohamed Ahmed Ibrahim</h1>
-            <div class="links">
-                <a href="mailto:muhamed.ahmed.ibrahim.1998@gmail.com">Gmail</a>
-                <a href="https://www.linkedin.com/in/mohamed-ahmed-ibrahim98?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
-                <a href="mailto:Mohamed.Ahmed@Alexconstruction.com.eg">Professional Email</a>
+    <!-- شريط التنقل -->
+    <div class="navbar">
+        <div>
+            <a href="#">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <div class="dropdown">
+                <a href="#connects">Connects</a>
+                <div class="dropdown-content">
+                    <a href="mailto:muhamed.ahmed.ibrahim.1998@gmail.com">Gmail</a>
+                    <a href="https://www.linkedin.com/in/mohamed-ahmed-ibrahim98?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
+                    <a href="mailto:Mohamed.Ahmed@Alexconstruction.com.eg">Professional Email</a>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- رأس الصفحة -->
+    <div class="header-container">
+        <img src="Mohamed-Ahmed.png" alt="Profile Picture">
+        <h1>QS Mohamed Ahmed Ibrahim</h1>
+        <p>Quantity Surveyor | GIS Professional</p>
+    </div>
+
+    <!-- الروابط -->
+    <div class="links">
+        <a href="mailto:muhamed.ahmed.ibrahim.1998@gmail.com">Gmail</a>
+        <a href="https://www.linkedin.com/in/mohamed-ahmed-ibrahim98?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
+        <a href="mailto:Mohamed.Ahmed@Alexconstruction.com.eg">Professional Email</a>
+    </div>
+
+    <!-- المحتوى -->
     <div class="content">
-        <div class="section">
-            <h2><a href="survey.html">SURVEY</a></h2>
-            <p>يتضمن هذه الصفحة بعض الاعمال التي عملت عليها في الفترة من 2021 حتي الان .</p>
+
+        <!-- قسم المشاريع -->
+        <div id="projects" class="section">
+            <h2>My Projects</h2>
+            <div class="projects">
+                <!-- مشروع 1 -->
+                <div class="project-item">
+                    <img src="project1.png" alt="Project 1">
+                    <h3>Project Name 1</h3>
+                    <p>Description of the project or work done.</p>
+                    <a href="project1.html">More Information</a>
+                </div>
+
+                <!-- مشروع 2 -->
+                <div class="project-item">
+                    <img src="project2.png" alt="Project 2">
+                    <h3>Project Name 2</h3>
+                    <p>Description of the project or work done.</p>
+                    <a href="project2.html">More Information</a>
+                </div>
+
+                <!-- مشروع 3 -->
+                <div class="project-item">
+                    <img src="project3.png" alt="Project 3">
+                    <h3>Project Name 3</h3>
+                    <p>Description of the project or work done.</p>
+                    <a href="project3.html">More Information</a>
+                </div>
+
+                <!-- إضافة المزيد من المشاريع حسب الحاجة -->
+            </div>
         </div>
-        <div class="section">
-            <h2>GIS</h2>
-            <p>قريبا سيتم رفع البيانات .</p>
+
+        <!-- قسم الخبرة -->
+        <div id="experience" class="section">
+            <h2>Experience</h2>
+            <p>Details about your professional experience go here.</p>
         </div>
-        <div class="section">
-            <h2>Certifications and Qualifications</h2>
-            <p>المؤهلات العلمية و الشهادات .</p>
+
+        <!-- قسم التواصل -->
+        <div id="connects" class="section">
+            <h2>Connects</h2>
+            <p>Details about how to connect with you go here.</p>
         </div>
+
     </div>
 
     <script>
+        // التمرير لتغيير موضع الاسم والصورة
         window.addEventListener('scroll', function() {
-            const headerContainer = document.querySelector('.header-container');
-            if (window.scrollY > 100) {
-                document.body.classList.add('scrolled');
-                headerContainer.style.backgroundColor = '#89CFF0'; /* الحفاظ على لون الخلفية */
+            var header = document.querySelector('.header-container');
+            var links = document.querySelector('.links');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+                links.classList.add('scrolled');
             } else {
-                document.body.classList.remove('scrolled');
-                headerContainer.style.backgroundColor = '#89CFF0'; /* الحفاظ على لون الخلفية */
+                header.classList.remove('scrolled');
+                links.classList.remove('scrolled');
             }
         });
     </script>

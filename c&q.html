@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications and Qualifications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .header-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: #89CFF0;
+            padding: 20px;
+        }
+
+        .header-container a {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .header-container a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            margin-top: 100px;
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .cert-item, .qual-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .cert-item img, .qual-item img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+        }
+
+        .cert-item a, .qual-item a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 14px;
+        }
+
+        .cert-item a:hover, .qual-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="index.html">Back to Home</a>
+    </div>
+
+    <div class="content">
+        <h1>Certifications and Qualifications</h1>
+
+        <!-- Certifications Section -->
+        <h2 class="section-title">Certifications</h2>
+        <div class="grid-container">
+            <!-- Example certification items -->
+            <div class="cert-item">
+                <img src="certification_01.jpg" alt="Certification 01">
+                <a href="certification_01.pdf" target="_blank">View Certification 01</a>
+            </div>
+            <div class="cert-item">
+                <img src="certification_02.jpg" alt="Certification 02">
+                <a href="certification_02.pdf" target="_blank">View Certification 02</a>
+            </div>
+            <!-- Add more certification items as needed -->
+        </div>
+
+        <!-- Qualifications Section -->
+        <h2 class="section-title">Qualifications</h2>
+        <div class="grid-container">
+            <!-- Example qualification items -->
+            <div class="qual-item">
+                <img src="qualification_01.jpg" alt="Qualification 01">
+                <a href="qualification_01.pdf" target="_blank">View Qualification 01</a>
+            </div>
+            <div class="qual-item">
+                <img src="qualification_02.jpg" alt="Qualification 02">
+                <a href="qualification_02.pdf" target="_blank">View Qualification 02</a>
+            </div>
+            <!-- Add more qualification items as needed -->
+        </div>
+    </div>
+
+</body>
+</html>

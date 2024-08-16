@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIS - Document Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .header-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: #89CFF0;
+            padding: 20px;
+        }
+
+        .header-container a {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .header-container a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            margin-top: 100px;
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .pdf-item, .image-item, .chart-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .pdf-item a, .image-item a, .chart-item a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 14px;
+        }
+
+        .pdf-item a:hover, .image-item a:hover, .chart-item a:hover {
+            text-decoration: underline;
+        }
+
+        .pdf-item iframe, .image-item img, .chart-item img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+        }
+
+        .pdf-item iframe {
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="index.html">Back to Home</a>
+    </div>
+
+    <div class="content">
+        <h1>GIS - Document Viewer</h1>
+
+        <!-- PDF Section -->
+        <h2 class="section-title">PDF Documents</h2>
+        <div class="grid-container">
+            <!-- Example PDF items -->
+            <div class="pdf-item">
+                <iframe src="PDF_file_01.pdf" title="PDF File 01"></iframe>
+                <a href="PDF_file_01.pdf" target="_blank">View PDF File 01</a>
+            </div>
+            <div class="pdf-item">
+                <iframe src="PDF_file_02.pdf" title="PDF File 02"></iframe>
+                <a href="PDF_file_02.pdf" target="_blank">View PDF File 02</a>
+            </div>
+            <!-- Add more PDF items as needed -->
+        </div>
+
+        <!-- Images Section -->
+        <h2 class="section-title">Images</h2>
+        <div class="grid-container">
+            <!-- Example image items -->
+            <div class="image-item">
+                <img src="image_01.jpg" alt="Image 01">
+                <a href="image_01.jpg" target="_blank">View Image 01</a>
+            </div>
+            <div class="image-item">
+                <img src="image_02.jpg" alt="Image 02">
+                <a href="image_02.jpg" target="_blank">View Image 02</a>
+            </div>
+            <!-- Add more image items as needed -->
+        </div>
+
+        <!-- Charts Section -->
+        <h2 class="section-title">Charts</h2>
+        <div class="grid-container">
+            <!-- Example chart items -->
+            <div class="chart-item">
+                <img src="chart_01.jpg" alt="Chart 01">
+                <a href="chart_01.jpg" target="_blank">View Chart 01</a>
+            </div>
+            <div class="chart-item">
+                <img src="chart_02.jpg" alt="Chart 02">
+                <a href="chart_02.jpg" target="_blank">View Chart 02</a>
+            </div>
+            <!-- Add more chart items as needed -->
+        </div>
+    </div>
+
+</body>
+</html>
