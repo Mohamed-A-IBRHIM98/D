@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QS Mohamed Ahmed Ibrahim</title>
+    <title>Mohamed Ahmed Ibrahim</title>
     <style>
+        /* أنماط CSS */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -52,6 +53,7 @@
             z-index: 1000;
         }
 
+
         .navbar .dropdown-content a {
             color: #fff;
             padding: 12px 16px;
@@ -76,25 +78,26 @@
             color: #fff;
             position: relative;
             transition: padding 0.3s ease;
+            margin-top: 50px; /* لإتاحة مكان لشريط التنقل */
         }
 
         .header-container img {
             border-radius: 50%;
-            width: 120px;
-            height: 120px;
+            width: 220px;
+            height: 220px;
             transition: transform 0.3s ease;
         }
 
         .header-container h1 {
             margin: 20px 0 10px;
-            font-size: 36px;
+            font-size: 55px;
             transition: transform 0.3s ease;
         }
 
         /* الروابط */
         .links {
             background-color: #006699;
-            padding: 15px;
+            padding: 12px;
             text-align: center;
             position: fixed;
             bottom: 0;
@@ -123,7 +126,7 @@
         .content {
             padding: 20px;
             max-width: 1200px;
-            margin: 150px auto 100px auto;
+            margin: 50px auto;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
@@ -139,10 +142,18 @@
 
         .section h2 {
             font-size: 24px;
-            margin-bottom: 15px;
+            margin-bottom: 24px;
             color: #004080;
         }
 
+        .experience, .our-services {
+            background-color: #e6f2ff; /* نفس لون خلفية قسم المشاريع */
+            padding: 50px 20px;
+            margin-bottom: 30px; /* تباعد بين الأقسام */
+            border: 2px solid #004080; /* نفس الإطار */
+            border-radius: 15px; /* نفس الزوايا المنحنية */
+        }
+ 
         .projects {
             display: flex;
             flex-wrap: wrap;
@@ -187,20 +198,35 @@
             }
         }
 
-        /* تغيير موضع الاسم والصورة عند التمرير */
-        .scrolled .header-container h1 {
-            transform: translateX(-150px);
+        /* المربع المحدد للصور */
+        .image-container {
+            width: 300px; /* تحديد العرض */
+            height: 200px; /* تحديد الارتفاع */
+            overflow: hidden; /* إخفاء الأجزاء الزائدة */
+            position: relative; /* لضبط موضع الصورة بشكل دقيق */
+            border: 2px solid #004080; /* إطار حول المربع */
+            border-radius: 8px; /* جعل الزوايا منحنية */
+            background-color: #f4f4f4; /* خلفية للمربع */
+            margin: 0 auto; /* توسيط المربع */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .scrolled .header-container img {
-            transform: translateX(150px);
+        .image-container img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%; /* عرض الصورة لملء المربع */
+            height: 100%; /* ارتفاع الصورة لملء المربع */
+            object-fit: cover; /* ضبط حجم الصورة لملء المربع مع الحفاظ على النسبة */
         }
 
         /* تغيير خلفية شريط الروابط عند التمرير */
         .scrolled .links {
-            background: linear-gradient(to right, #004080, #006699);
+            background: linear-gradient(to right, #004080, #001055);
         }
-
     </style>
 </head>
 <body>
@@ -225,7 +251,7 @@
     <!-- رأس الصفحة -->
     <div class="header-container">
         <img src="Mohamed-Ahmed.png" alt="Profile Picture">
-        <h1>QS Mohamed Ahmed Ibrahim</h1>
+        <h1> Mohamed Ahmed Ibrahim</h1>
         <p>Quantity Surveyor | GIS Professional</p>
     </div>
 
@@ -243,62 +269,306 @@
         <div id="projects" class="section">
             <h2>My Projects</h2>
             <div class="projects">
-                <!-- مشروع 1 -->
                 <div class="project-item">
-                    <img src="project1.png" alt="Project 1">
-                    <h3>Project Name 1</h3>
-                    <p>Description of the project or work done.</p>
-                    <a href="project1.html">More Information</a>
+                    <div class="image-container">
+                        <img id="mahmoudia-img" src="Mazarine.png" alt="Mazarine">
+                    </div>
+                    <h3>Mazarine</h3>
+                    <p>Description of the project.</p>
+                    <a href="Mazarine.html">More Information</a>
                 </div>
 
-                <!-- مشروع 2 -->
                 <div class="project-item">
-                    <img src="project2.png" alt="Project 2">
-                    <h3>Project Name 2</h3>
-                    <p>Description of the project or work done.</p>
-                    <a href="project2.html">More Information</a>
+                    <div class="image-container">
+                        <img id="sawari-img" src="Sawari (New Alexandria).png" alt="Sawari (New Alexandria)">
+                    </div>
+                    <h3>Sawari (New Alexandria)</h3>
+                    <p>Description of the project.</p>
+                    <a href="Sawari (New Alexandria).html">More Information</a>
                 </div>
 
-                <!-- مشروع 3 -->
                 <div class="project-item">
-                    <img src="project3.png" alt="Project 3">
-                    <h3>Project Name 3</h3>
-                    <p>Description of the project or work done.</p>
-                    <a href="project3.html">More Information</a>
+                    <div class="image-container">
+                        <img id="el-mahmoudia-img" src="The New El Mahmoudia Axis.png" alt="The New El Mahmoudia Axis">
+                    </div>
+                    <h3>The New El Mahmoudia Axis</h3>
+                    <p>Description of the project.</p>
+                    <a href="The New El Mahmoudia Axis.html">More Information</a>
                 </div>
-
-                <!-- إضافة المزيد من المشاريع حسب الحاجة -->
             </div>
         </div>
 
-        <!-- قسم الخبرة -->
-        <div id="experience" class="section">
-            <h2>Experience</h2>
-            <p>Details about your professional experience go here.</p>
+<div id="experience" class="section experience">
+    <h2>My Experience</h2>
+    
+    <div class="experience-container">
+        <!-- عنصر الخبرة الأول -->
+        <div class="experience-item">
+            <div class="image-container">
+                <img id="quantity-surveying-img" src="Quantity Surveying.png" alt="Quantity Surveying">
+            </div>
+            <h3>Quantity Surveying</h3>
+			
+            <p>Experience in managing cost estimations and project budgets, ensuring financial efficiency in construction projects.</p>
+			<a href="Quantity Surveying.html">More Information</a>
         </div>
 
-        <!-- قسم التواصل -->
-        <div id="connects" class="section">
-            <h2>Connects</h2>
-            <p>Details about how to connect with you go here.</p>
+        <!-- عنصر الخبرة الثاني -->
+        <div class="experience-item">
+            <div class="image-container">
+                <img id="surveying-img" src="Surveying.png" alt="Surveying">
+            </div>
+            <h3>Surveying</h3>
+			
+            <p>Experience in managing surveying operations, organizing workflows, and ensuring the quality of work.</p>
+			<a href="Surveying.html">More Information</a>
+        </div>
+    </div>
+
+    <div class="experience-container single-item">
+        <!-- عنصر الخبرة الثالث -->
+        <div class="experience-item">
+            <div class="image-container">
+                <img id="gis-img" src="GIS.png" alt="GIS">
+            </div>
+            <h3>GIS</h3>
+			
+            <p>Experience in mapping and geographic analysis, with a focus on their integration with BIM, construction projects, and data analysis.</p>
+			<a href="GIS.html">More Information</a>
+        </div>
+    </div>
+</div>
+
+<!-- إضافة التنسيقات إلى ملف CSS -->
+<style>
+    .experience-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .experience-item {
+        width: 48%;
+        text-align: center;
+        padding: 10px;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+    }
+
+    .experience-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .single-item {
+        justify-content: center;
+    }
+</style>
+
+        <!-- قسم الخدمات -->
+        <div id="Our services" class="section">
+            <h2>Our services</h2>
+            <p>Information about Our services goes here.</p>
         </div>
 
     </div>
 
-    <script>
-        // التمرير لتغيير موضع الاسم والصورة
-        window.addEventListener('scroll', function() {
-            var header = document.querySelector('.header-container');
-            var links = document.querySelector('.links');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-                links.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-                links.classList.remove('scrolled');
-            }
-        });
-    </script>
+<script>
+    let autoCycleIntervalMazarine;
+    let autoCycleIntervalSawari;
+    let autoCycleIntervalElMahmoudia;
 
+    // Function to cycle through the Mazarine images
+    function cycleImagesMazarine() {
+        const images = [
+            "Mazarine.png",
+            "Mazarine(1).png",
+            "Mazarine(2).png",
+            "Mazarine(3).png"
+        ];
+        let index = 0;
+        const imgElement = document.querySelector('#mahmoudia-img');
+        
+        if (!imgElement) {
+            console.error("Element with ID 'mahmoudia-img' not found.");
+            return;
+        }
+
+        return setInterval(() => {
+            index = (index + 1) % images.length;
+            imgElement.src = images[index];
+            console.log("Image source updated to: " + images[index]); // For debugging
+        }, 5000); // Change every 5 seconds
+    }
+
+    // Function to cycle through the Sawari images
+    function cycleImagesSawari() {
+        const images = [
+            "Sawari (New Alexandria).png",
+            "Sawari (New Alexandria)(1).png",
+            "Sawari (New Alexandria)(2).png"
+        ];
+        let index = 0;
+        const imgElement = document.querySelector('#sawari-img');
+        
+        if (!imgElement) {
+            console.error("Element with ID 'sawari-img' not found.");
+            return;
+        }
+
+        return setInterval(() => {
+            index = (index + 1) % images.length;
+            imgElement.src = images[index];
+            console.log("Image source updated to: " + images[index]); // For debugging
+        }, 5000); // Change every 5 seconds
+    }
+
+    // Function to cycle through the El Mahmoudia images
+    function cycleImagesElMahmoudia() {
+        const images = [
+            "The New El Mahmoudia Axis.png",
+            "The New El Mahmoudia Axis(1).png",
+            "The New El Mahmoudia Axis(2).png"
+        ];
+        let index = 0;
+        const imgElement = document.querySelector('#el-mahmoudia-img');
+        
+        if (!imgElement) {
+            console.error("Element with ID 'el-mahmoudia-img' not found.");
+            return;
+        }
+
+        return setInterval(() => {
+            index = (index + 1) % images.length;
+            imgElement.src = images[index];
+            console.log("Image source updated to: " + images[index]); // For debugging
+        }, 5000); // Change every 5 seconds
+    }
+
+    function startAutoCycle() {
+        autoCycleIntervalMazarine = cycleImagesMazarine();
+        autoCycleIntervalSawari = cycleImagesSawari();
+        autoCycleIntervalElMahmoudia = cycleImagesElMahmoudia();
+    }
+
+    function stopAutoCycle() {
+        clearInterval(autoCycleIntervalMazarine);
+        clearInterval(autoCycleIntervalSawari);
+        clearInterval(autoCycleIntervalElMahmoudia);
+    }
+
+    window.onload = startAutoCycle;
+
+    window.onscroll = function() {
+        if (window.scrollY > 50) {
+            document.body.classList.add("scrolled");
+        } else {
+            document.body.classList.remove("scrolled");
+        }
+    };
+	
+	let autoCycleIntervalQuantitySurveying;
+let autoCycleIntervalSurveying;
+let autoCycleIntervalGIS;
+
+// Function to cycle through the Quantity Surveying images
+function cycleImagesQuantitySurveying() {
+    const images = [
+        "Quantity Surveying.png",
+        "Quantity Surveying (1).png",
+        "Quantity Surveying (2).png"
+    ];
+    let index = 0;
+    const imgElement = document.querySelector('#quantity-surveying-img');
+    
+    if (!imgElement) {
+        console.error("Element with ID 'quantity-surveying-img' not found.");
+        return;
+    }
+
+    return setInterval(() => {
+        index = (index + 1) % images.length;
+        imgElement.src = images[index];
+        console.log("Image source updated to: " + images[index]); // For debugging
+    }, 5000); // Change every 5 seconds
+}
+
+// Function to cycle through the Surveying images
+function cycleImagesSurveying() {
+    const images = [
+        "Surveying.png",
+        "Surveying (1).png",
+        "Surveying (2).png"
+    ];
+    let index = 0;
+    const imgElement = document.querySelector('#surveying-img');
+    
+    if (!imgElement) {
+        console.error("Element with ID 'surveying-img' not found.");
+        return;
+    }
+
+    return setInterval(() => {
+        index = (index + 1) % images.length;
+        imgElement.src = images[index];
+        console.log("Image source updated to: " + images[index]); // For debugging
+    }, 5000); // Change every 5 seconds
+}
+
+// Function to cycle through the GIS images
+function cycleImagesGIS() {
+    const images = [
+        "GIS.png",
+        "GIS (1).png",
+        "GIS (2).png"
+    ];
+    let index = 0;
+    const imgElement = document.querySelector('#gis-img');
+    
+    if (!imgElement) {
+        console.error("Element with ID 'gis-img' not found.");
+        return;
+    }
+
+    return setInterval(() => {
+        index = (index + 1) % images.length;
+        imgElement.src = images[index];
+        console.log("Image source updated to: " + images[index]); // For debugging
+    }, 5000); // Change every 5 seconds
+}
+
+function startAutoCycle() {
+    autoCycleIntervalMazarine = cycleImagesMazarine();
+    autoCycleIntervalSawari = cycleImagesSawari();
+    autoCycleIntervalElMahmoudia = cycleImagesElMahmoudia();
+    autoCycleIntervalQuantitySurveying = cycleImagesQuantitySurveying();
+    autoCycleIntervalSurveying = cycleImagesSurveying();
+    autoCycleIntervalGIS = cycleImagesGIS();
+}
+
+function stopAutoCycle() {
+    clearInterval(autoCycleIntervalMazarine);
+    clearInterval(autoCycleIntervalSawari);
+    clearInterval(autoCycleIntervalElMahmoudia);
+    clearInterval(autoCycleIntervalQuantitySurveying);
+    clearInterval(autoCycleIntervalSurveying);
+    clearInterval(autoCycleIntervalGIS);
+}
+
+window.onload = startAutoCycle;
+
+window.onscroll = function() {
+    if (window.scrollY > 50) {
+        document.body.classList.add("scrolled");
+    } else {
+        document.body.classList.remove("scrolled");
+    }
+};
+
+</script>
+
+
+	
 </body>
 </html>

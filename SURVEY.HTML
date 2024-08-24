@@ -3,94 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Viewer</title>
+    <title>Surveying - Document Viewer</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            color: #333;
         }
+
         .header-container {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            background-color: #89CFF0;
-            padding: 20px;
+            background-color: #001055;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+
         .header-container a {
-            color: #007BFF;
+            color: #ffffff;
             text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
         }
+
         .header-container a:hover {
-            text-decoration: underline;
+            color: #ddddff;
         }
+
         .content {
-            margin-top: 100px;
+            margin-top: 80px;
             padding: 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .section-title {
-            font-size: 24px;
+
+        h1 {
+            font-size: 32px;
+            color: #001055;
             margin-bottom: 20px;
         }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #001055;
+            padding-bottom: 5px;
+        }
+
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(20, 1fr);
-            gap: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
         }
-        .pdf-item {
-            background: #fff;
+
+        .pdf-item, .image-item, .chart-item {
+            background: #ffffff;
             border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .pdf-item a {
+
+        .pdf-item:hover, .image-item:hover, .chart-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .pdf-item a, .image-item a, .chart-item a {
             text-decoration: none;
+            color: #001055;
+            font-size: 16px;
+            display: block;
+            padding: 10px 0;
+            transition: color 0.3s ease;
+        }
+
+        .pdf-item a:hover, .image-item a:hover, .chart-item a:hover {
             color: #007BFF;
+        }
+
+        .pdf-item iframe, .image-item img, .chart-item img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .pdf-item iframe {
+            height: 250px;
+        }
+		
+		        footer {
+            background-color: #000fff;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
             font-size: 14px;
         }
-        .pdf-item a:hover {
-            text-decoration: underline;
-        }
+    </style>
     </style>
 </head>
 <body>
 
     <div class="header-container">
-        <a href="Mohamedindex.html">Back to Home</a>
+        <a href="index.html">Back to Home</a>
     </div>
 
     <div class="content">
-        <h1>Document Viewer</h1>
+        <h1>  Surveying  </h1>
 
         <!-- PDF Section -->
-        <h2 class="section-title">PDF</h2>
+        <h2 class="section-title">PDF Documents</h2>
         <div class="grid-container">
-            <!-- Repeat the following div for each PDF file under the OTHER section -->
+            <!-- Example PDF items -->
             <div class="pdf-item">
-                <a href="PDF_file_01.pdf" target="PDF_file_01.pdf">Other File 01</a>
+                <iframe src="PDF_file_01.pdf" title="PDF File 01"></iframe>
+                <a href="PDF_file_01.pdf" target="_blank">View PDF File 01</a>
             </div>
             <div class="pdf-item">
-                <a href="PDF_file_02.pdf" target="_blank">Other File 02</a>
+                <iframe src="PDF_file_02.pdf" title="PDF File 02"></iframe>
+                <a href="PDF_file_02.pdf" target="_blank">View PDF File 02</a>
             </div>
-            <!-- Continue this pattern for all OTHER PDFs -->
+            <!-- Add more PDF items as needed -->
         </div>
 
-        <!-- SOFT Section -->
-        <h2 class="section-title">SOFT</h2>
+        <!-- Images Section -->
+        <h2 class="section-title">Images</h2>
         <div class="grid-container">
-            <!-- Repeat the following div for each PDF file under the SOFT section -->
-            <div class="pdf-item">
-                <a href="WEB/soft_file_01.pdf" target="PDF_file_01.pdf">Soft File 01</a>
+            <!-- Example image items -->
+            <div class="image-item">
+                <img src="image_01.jpg" alt="Image 01">
+                <a href="image_01.jpg" target="_blank">View Image 01</a>
             </div>
-            <div class="pdf-item">
-                <a href="WEB/soft_file_02.pdf" target="_blank">Soft File 02</a>
+            <div class="image-item">
+                <img src="image_02.jpg" alt="Image 02">
+                <a href="image_02.jpg" target="_blank">View Image 02</a>
             </div>
-            <!-- Continue this pattern for all SOFT PDFs -->
+            <!-- Add more image items as needed -->
+        </div>
+
+        <!-- Charts Section -->
+        <h2 class="section-title">Charts</h2>
+        <div class="grid-container">
+            <!-- Example chart items -->
+            <div class="chart-item">
+                <img src="chart_01.jpg" alt="Chart 01">
+                <a href="chart_01.jpg" target="_blank">View Chart 01</a>
+            </div>
+            <div class="chart-item">
+                <img src="chart_02.jpg" alt="Chart 02">
+                <a href="chart_02.jpg" target="_blank">View Chart 02</a>
+            </div>
+            <!-- Add more chart items as needed -->
         </div>
     </div>
+
+
+	    <footer>
+        @Created by Mohamed Ahmed Ibrahim
+    </footer>
 
 </body>
 </html>
